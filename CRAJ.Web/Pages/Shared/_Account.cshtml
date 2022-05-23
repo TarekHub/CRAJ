@@ -1,0 +1,39 @@
+﻿@{
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="sidebar">
+            <h2>Sidebar</h2>
+            <ul style="padding-left:0">
+                <li><a asp-page="/Index"><i class="fa-solid fa-house"></i>Home</a></li>
+                <li><a asp-page="Create"><i class="fa-solid fa-user"></i>Profile</a></li>
+                <li><a asp-page="Documents"><i class="fa-solid fa-file"></i>Docuements</a></li>
+            </ul>
+        </div>
+
+        <div class="main_content">
+            <div class="header">
+                HELLO WORKER
+            </div>
+            <div>
+                <div>
+                    @RenderBody()
+
+                    @section Scripts {
+                        @RenderSection("Scripts", required: false)
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

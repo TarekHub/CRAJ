@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Adresse" xml:space="preserve">
+    <value>Ali Mendjeli, prés de la poste centrale</value>
+  </data>
+  <data name="APropos" xml:space="preserve">
+    <value>À Propos</value>
+  </data>
+  <data name="AProposTexte" xml:space="preserve">
+    <value>L'archive est l'organisme qui se charge de conserver de manière organisée les documents, enregistrements, inscriptions et codes, qu'ils émanent d'un établissement public ou parapublic, qu'il s'agisse d'un service d'entreprise ou d'un organisme privé, ainsi que les départements gouvernementaux, les intérêts et les entreprises qui mènent des activités liées à ses affaires et il entreprend la tâche de le préserver et d'en prendre soin, et il est géré par ceux qui en assument tour à tour la responsabilité ou par toute partie autorisée à le conserver, grâce à l'expansion de l'original concept d'archives destiné à conserver ces matériaux, ainsi qu'à préserver ce qui est lié à l'histoire généalogique des familles et des personnalités éminentes qui, en les préservant, apportent un bénéfice à les conserver.Fournir des sources primaires, des preuves et des preuves sur l'histoire de le pays et les origines de son peuple.</value>
+  </data>
+  <data name="CallUs" xml:space="preserve">
+    <value>Numéro</value>
+  </data>
+  <data name="Contact" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="CRAJ" xml:space="preserve">
+    <value>Centre Régional d'Archives de Constantine</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>craj@gmail.com</value>
+  </data>
+  <data name="EmailUs" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="HelloWorld" xml:space="preserve">
+    <value>مرحبا</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Acceuil</value>
+  </data>
+  <data name="IdDocuement" xml:space="preserve">
+    <value>Numéro du docuement</value>
+  </data>
+  <data name="Intro" xml:space="preserve">
+    <value>Le Centre régional des archives judiciaires de Constantine -CRAJ- est un organisme (unité administrative) qui a pour mandat de conserver, de traiter et de rendre accessible des archives historiques (docuement, carnets, fiches ...) appartenant au secteur judiciaire.</value>
+  </data>
+  <data name="MinistèreJustice" xml:space="preserve">
+    <value>Ministère de la Justice</value>
+  </data>
+  <data name="Number" xml:space="preserve">
+    <value>06 99 99 99 99</value>
+  </data>
+  <data name="ObjectifArchive" xml:space="preserve">
+    <value>Objectifs de l'archives judiciaires</value>
+  </data>
+  <data name="ObjectifArchivePoint1" xml:space="preserve">
+    <value>Rapprocher la justice au citoyen</value>
+  </data>
+  <data name="ObjectifArchivePoint2" xml:space="preserve">
+    <value>Les archives judiciaires constituent une source importante de recherche sur la société algérienne dans les années à venir, et ausssi une fenêtre privilégiée pour connaître le passé.</value>
+  </data>
+  <data name="ObjectifArchivePoint3" xml:space="preserve">
+    <value>Certification du travail de l'administration judiciaire et de la relation interactive entre l'état et le citoyen à travers la loi.</value>
+  </data>
+  <data name="ObjectifArchiveTexte" xml:space="preserve">
+    <value>Le processus de gestion des archives judiciaires au niveau du Ministère de la Justice et de ses organismes judiciaires est un processus sensible et important soumis à des normes et critères. Par conséquent, l'application de techniques scientifiques ainsi que de théories et de normes mondiales et nationales pour l'organisation et la gestion des archives judiciaires est nécessaire pour suivre le rythme de ces organismes, que ce soit au niveau central ou local. Les objectifs de secteur judiciaire sont :</value>
+  </data>
+  <data name="OurAdresse" xml:space="preserve">
+    <value>Adresse</value>
+  </data>
+  <data name="RADP" xml:space="preserve">
+    <value>République Algérienne Démocratique et Populaire</value>
+  </data>
+  <data name="ReadMore" xml:space="preserve">
+    <value>Plus d'information</value>
+  </data>
+  <data name="Research" xml:space="preserve">
+    <value>Rechercher</value>
+  </data>
+  <data name="Role1Name" xml:space="preserve">
+    <value>Directeur du Centre Régional d'Archives de Constantine</value>
+  </data>
+  <data name="Role2Name" xml:space="preserve">
+    <value>Procureur Général</value>
+  </data>
+  <data name="Role3Name" xml:space="preserve">
+    <value>Avocat/Juge</value>
+  </data>
+  <data name="Role4Name" xml:space="preserve">
+    <value>Visiteur</value>
+  </data>
+  <data name="Roles" xml:space="preserve">
+    <value>Roles</value>
+  </data>
+  <data name="RolesTexte" xml:space="preserve">
+    <value>Cette plateforme regroupe plusieurs rôles dans le secteur judiciaire.</value>
+  </data>
+  <data name="ServicePoint1" xml:space="preserve">
+    <value>Télécharger ses docuements en ligne</value>
+  </data>
+  <data name="ServicePoint1Text" xml:space="preserve">
+    <value>Grâce à cette portail, vous pouvez télécharger vos propres document en ligne sans vous présenter au niveau du tribunal.</value>
+  </data>
+  <data name="ServicePoint2" xml:space="preserve">
+    <value>Réorganiser tous les documents dans une plateforme digitale.</value>
+  </data>
+  <data name="ServicePoint2Text" xml:space="preserve">
+    <value>Tous les utilisateurs de la portaille, pourront donc consulter les fichiers dans un platforme digitiale unifiée.</value>
+  </data>
+  <data name="ServicePoint3" xml:space="preserve">
+    <value>Automatisation des états des documents.</value>
+  </data>
+  <data name="ServicePoint3Text" xml:space="preserve">
+    <value>Pas de suivi d'état par les responsable. Cependant, le changement de leur état se produira d'une facon automatique.</value>
+  </data>
+  <data name="ServicePoint4" xml:space="preserve">
+    <value>Numérisation de l'archive.</value>
+  </data>
+  <data name="ServicePoint4Text" xml:space="preserve">
+    <value>Seul le directeur du centre régional de l'archive judiciaire aura le droit de consulté les docuements archivés et les exportés.</value>
+  </data>
+  <data name="Services" xml:space="preserve">
+    <value>Services</value>
+  </data>
+  <data name="ServicesText" xml:space="preserve">
+    <value>Les services du Centre Régional d'Archives Judiciaire de Constantine sont nombreuses, le but majeur de cette portail et de rassembler les différents acteurs effectifs dans le secteur dans un seul endroit..</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>Portail électronique de gestion des dossiers judiciaires</value>
+  </data>
+  <data name="YourLastName" xml:space="preserve">
+    <value>Prenom</value>
+  </data>
+  <data name="YourName" xml:space="preserve">
+    <value>Nom</value>
+  </data>
+</root>
