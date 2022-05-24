@@ -25,7 +25,7 @@ namespace CRAJ.Web.Pages.Account
         {
             Types = _context.TypeDoc.Select(a => new SelectListItem
             {
-                Value = a.Id.ToString(),
+                Value = a.Nom,
                 Text = a.Nom
             }).ToList();
             return Page();

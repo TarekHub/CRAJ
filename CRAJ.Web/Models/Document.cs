@@ -33,12 +33,10 @@ namespace CRAJ.Web.Models
         [Required]
         [Display(Name = "Lieu de Création")]
         public string LieuCreation { get; set; }
-
         [Required]
-        [ForeignKey("TypeDoc")]
-        [Display(Name ="Type de docuement")]
-        public int IdTypeDoc { get; set; }
-        public TypeDoc TypeDoc{ get; set; }
+        [Display(Name = "Type de docuement")]
+        public string Type { get; set; }
+
 
     }
 }

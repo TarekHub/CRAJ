@@ -1,0 +1,65 @@
+﻿@page
+@model CRAJ.Web.Pages.Account.ImprimerModel
+
+<div class="container text-center mt-3">
+    <p>الجمهورية الجزائرية الديموقراطية الشعبية</p>
+    <p>وزارة العدل</p>
+    @{
+        switch (Model.Document.Type)
+        {
+            case "شهادة جنسية":
+                // Use the text block below to separate html elements from code
+                <text>
+                    <h3 class="text-decoration-underline">شهادة جنسية</h3>
+                </text>
+                break;  // Always break each case
+            case "ملف موظف":
+                <text>
+                    <h3 class="text-decoration-underline">ملف موظف</h3>
+                </text>
+                break;
+            case "امر بالقبض":
+                <text>
+                    <h3 class="text-decoration-underline">امر بالقبض</h3>
+                </text>
+                break;
+            default:
+                <text>
+                    <h1>?</h1>
+                </text>
+                break;
+        }
+    }
+    <br />
+    <br />
+    <div class="centerdiv">
+
+        <div class="text-right">
+            <p><span class="font-weight-bold">@Model.Document.Id</span> : رقم الوثيقة</p>
+            <p>الإسم و اللقب  : <span class="font-weight-bold"> @Model.Document.NomPersonne @Model.Document.PrenomPersonne</span></p>
+            <p>  <span class="font-weight-bold">@Model.Document.DateNaissance.ToString("d")</span> &nbsp : بـ  &nbsp<span class="font-weight-bold"> @Model.Document.LieuNaissance</span> : المولود في</p>
+        </div>
+        <div class="text-left m-5">
+            <p> حرر في : <span class="font-weight-bold">@Model.Document.DateCreation.ToString("d")</span></p>
+            <p><span class="font-weight-bold">@Model.Document.LieuCreation</span> : محكمة</p>
+        </div>
+    </div>
+</div>
+
+<br />
+<br />
+
+<div class="text-center ignoreForPdf">
+    <a id="btnPrint" class="btn btn-primary mx-2" style="color:white">
+        <i class="fa-solid fa-pen-to-square"></i>Imprimer
+    </a>
+</div>
+
+<script src="~/js/jquery/jquery.min.js"></script>
+<script type="text/javascript">
+    $("#btnPrint").click(function () {
+        $(".ignoreForPdf").hide();
+        window.print();
+        $(".ignoreForPdf").show();
+    });
+</script>

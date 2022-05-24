@@ -60,12 +60,12 @@
             </div>
             <div class="mb-2 col-6">
                 Type
-                <select asp-for="@Model.Document.IdTypeDoc"
+                <select asp-for="@Model.Document.Type"
                         asp-items="@Model.Types"
                         class="form-control">
                     <option value="@null" class="font-italic ">--Choisir le type--</option>
                 </select>
-                <span asp-validation-for="Document.IdTypeDoc" class="text-danger"></span>
+                <span asp-validation-for="Document.Type" class="text-danger"></span>
         </div>
          <div class="pl-3 pt-3">
             <button type="submit" class="btn btn-primary" style="width:150px">Ajouter</button>
