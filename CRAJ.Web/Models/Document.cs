@@ -12,30 +12,18 @@ namespace CRAJ.Web.Models
     {
         [Key]
         public int Id { get; set; }
+
         [Required]
-        [Display(Name = "Nom")]
-        public string NomPersonne { get; set; }
+        [Display(Name = "Identifiant de la personne")]
+        public int IdPersonne { get; set; }
+
         [Required]
-        [Display(Name = "Prenom")]
-        public string PrenomPersonne { get; set; }
-        [Required]
-        [Display(Name = "Genre")]
-        public Genre Genre { get; set; }
-        [Required]
-        [Display(Name = "Date de Naissance")]
-        public DateTime DateNaissance { get; set; }
-        [Required]
-        [Display(Name = "Lieu de Naissance")]
-        public string LieuNaissance { get; set; }
-        [Required]
-        [Display(Name = "Date de Création")]
+        [Display(Name = "Date")]
         public DateTime DateCreation { get; set; }
+
         [Required]
-        [Display(Name = "Lieu de Création")]
+        [Display(Name = "Lieu")]
         public string LieuCreation { get; set; }
-        [Required]
-        [Display(Name = "Type de docuement")]
-        public string Type { get; set; }
 
 
     }

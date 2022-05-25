@@ -1,0 +1,20 @@
+﻿@page
+@model CRAJ.Web.Pages.LogoutModel
+@{
+    ViewBag.Title = "Logout";
+    Layout = "~/Pages/Shared/_Account.cshtml";
+}
+<form method="post">
+    <div class="container mt-5">
+        <div>
+            <div class="col-sm-12 col-md-12 col-lg-4">
+                <p>Est se que vous êtes sûre ?</p>
+                <p>
+                    <button class="btn btn-primary" asp-page-handler="Logout">Oui</button>
+                    <button class="btn btn-light ml-5 border-dark" asp-page-handler="DontLogout">Non</button>
+                </p>
+            </div>
+        </div>
+    </div>
+
+</form>

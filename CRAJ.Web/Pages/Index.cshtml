@@ -1,6 +1,8 @@
 ﻿@page
 @model IndexModel
 @inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer localizer
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
 
 @{
     ViewData["Title"] = "Home page";
@@ -25,8 +27,8 @@
                 <li>
                     <partial name="_Culture" />
                 </li>
+                <li><a asp-page="Login">@localizer["Login"]</a></li>
 
-                <li><a asp-page="Account/Documents">@localizer["Login"]</a></li>
                 <li><a asp-page="Register">Inscription</a></li>
 
             </ul>

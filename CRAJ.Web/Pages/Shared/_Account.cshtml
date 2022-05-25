@@ -1,5 +1,6 @@
-﻿@using Microsoft.AspNetCore.Identity 
+﻿@using Microsoft.AspNetCore.Identity
 @inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
 
 @{
     Layout = "~/Pages/Shared/_Layout.cshtml";
@@ -15,25 +16,66 @@
 <body>
     <div class="wrapper">
         <div class="sidebar ignoreForPdf">
-            <h2>Sidebar</h2>
-            @{
-            if (SignInManager.IsSignedIn(User))
-            {
+            <h2>CRAJ</h2>
 
-            }
-            }
 
             <ul style="padding-left:0">
                 <li><a asp-page="/Index"><i class="fa-solid fa-house"></i>Home</a></li>
-                <li><a asp-page="Create"><i class="fa-solid fa-user"></i>Profile</a></li>
+                <li><a asp-page="Profil"><i class="fa-solid fa-user"></i>Profile</a></li>
                 <li><a asp-page="Documents"><i class="fa-solid fa-file"></i>Docuements</a></li>
-                <li><a asp-page="Logout"><i class="fa-solid fa-arrow-right-from-bracket"></i>Logout</a></li>
+                <li><a asp-page="/Logout"><i class="fa-solid fa-arrow-right-from-bracket"></i>Logout</a></li>
             </ul>
         </div>
 
         <div class="main_content">
             <div class="header">
-                HELLO WORKER
+
+                @if (User.Identity.IsAuthenticated && User.IsInRole("Ministre de la Justice - وزير العدل"))
+                {
+                    <h1>Ministre de la Justice - وزير العدل</h1>
+                    <h2>@User.Identity.Name</h2>
+                }
+                @if (User.Identity.IsAuthenticated && User.IsInRole("Procureur général - النائب العام"))
+                {
+                    <h1>Procureur général - النائب العام</h1>
+                    <h2>@User.Identity.Name</h2>
+                }
+                @if (User.Identity.IsAuthenticated && User.IsInRole("Archiviste Régionale - الأرشيفي على مستوى المجلس"))
+                {
+                    <h1>Archiviste Régionale - الأرشيفي على مستوى المجلس</h1>
+                    <h2>@User.Identity.Name</h2>
+                }
+                @if (User.Identity.IsAuthenticated && User.IsInRole("Procureur de la République - وكيل الجمهورية"))
+                {
+                    <h1>Procureur de la République - وكيل الجمهورية</h1>
+                    <h2>@User.Identity.Name</h2>
+                }
+                @if (User.Identity.IsAuthenticated && User.IsInRole("Archiviste Tribunal - الأرشيفي على مستوى المحكمة"))
+                {
+                    <h1>Archiviste Tribunal - الأرشيفي على مستوى المحكمة</h1>
+                    <h2>@User.Identity.Name</h2>
+                }
+                @if (User.Identity.IsAuthenticated && User.IsInRole("Directeur du Centre - مدير المركز"))
+                {
+                    <h1>Directeur du Centre - مدير المركز</h1>
+                    <h2>@User.Identity.Name</h2>
+                }
+                @if (User.Identity.IsAuthenticated && User.IsInRole("Archiviste du Centre - الأرشيفي على مستوى مركز الأرشيف"))
+                {
+                    <h1>Archiviste du Centre - الأرشيفي على مستوى مركز الأرشيف</h1>
+                    <h2>@User.Identity.Name</h2>
+                }
+                @if (User.Identity.IsAuthenticated && User.IsInRole("Avocat - محامي"))
+                {
+                    <h1>Avocat - محامي</h1>
+                    <h2>@User.Identity.Name</h2>
+                }
+                @if (User.Identity.IsAuthenticated && User.IsInRole("Titulaires de Droits - أصحاب الحقوق"))
+                {
+                    <h1>Titulaires de Droits - أصحاب الحقوق</h1>
+                    <h2>@User.Identity.Name</h2>
+                }
+
             </div>
             <div>
                 <div>

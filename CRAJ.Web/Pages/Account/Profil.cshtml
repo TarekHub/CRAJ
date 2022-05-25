@@ -1,0 +1,15 @@
+﻿@page
+@model CRAJ.Web.Pages.Account.ProfilModel
+@{
+    ViewBag.Title = "Profile";
+    Layout = "~/Pages/Shared/_Account.cshtml";
+}
+<div classe="container mt-5">
+
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-4">
+            <label class="ml-2">Username / اسم المستخدم : </label>
+            <span class="font-weight-bold"> @User.Identity.Name</span>
+        </div>
+    </div>
+</div>
