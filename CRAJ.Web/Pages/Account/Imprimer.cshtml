@@ -4,7 +4,7 @@
 <div class="container text-center mt-3">
     <p>الجمهورية الجزائرية الديموقراطية الشعبية</p>
     <p>وزارة العدل</p>
-    @{
+    @*@{
         switch (Model.Document.Type)
         {
             case "شهادة جنسية":
@@ -29,19 +29,19 @@
                 </text>
                 break;
         }
-    }
+    }*@
     <br />
     <br />
     <div class="centerdiv">
 
         <div class="text-right">
             <p><span class="font-weight-bold">@Model.Document.Id</span> : رقم الوثيقة</p>
-            <p>الإسم و اللقب  : <span class="font-weight-bold"> @Model.Document.NomPersonne @Model.Document.PrenomPersonne</span></p>
-            <p>  <span class="font-weight-bold">@Model.Document.DateNaissance.ToString("d")</span> &nbsp : بـ  &nbsp<span class="font-weight-bold"> @Model.Document.LieuNaissance</span> : المولود في</p>
+            @*<p>الإسم و اللقب  : <span class="font-weight-bold"> @Model.Document.NomPersonne @Model.Document.PrenomPersonne</span></p>
+            <p>  <span class="font-weight-bold">@Model.Document.DateNaissance.ToString("d")</span> &nbsp : بـ  &nbsp<span class="font-weight-bold"> @Model.Document.LieuNaissance</span> : المولود في</p>*@
         </div>
         <div class="text-left m-5">
             <p> حرر في : <span class="font-weight-bold">@Model.Document.DateCreation.ToString("d")</span></p>
-            <p><span class="font-weight-bold">@Model.Document.LieuCreation</span> : محكمة</p>
+            <p><span class="font-weight-bold">@Model.Document.Tribunal</span> : محكمة</p>
         </div>
     </div>
 </div>

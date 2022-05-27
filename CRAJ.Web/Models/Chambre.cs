@@ -6,16 +6,13 @@ using System.Threading.Tasks;
 
 namespace CRAJ.Web.Models
 {
-    public class TypeDoc
+    public class Chambre
     {
         [Key]
         public int Id { get; set; }
+
         [Required]
-        public string Nom { get; set; }
-
-
-        public TypeDoc()
-        {
-        }
+        [Display(Name = "Nom du la Chambre")]
+        public string Name { get; set; }
     }
 }

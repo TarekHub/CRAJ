@@ -1,5 +1,6 @@
 ﻿@page
 @model CRAJ.Web.Pages.Account.CreateModel
+@using CRAJ.Web.Models
 @{
     ViewBag.Title = "Create Docuement";
     Layout = "~/Pages/Shared/_Account.cshtml";
@@ -11,70 +12,61 @@
             <h2 class="text-primary pl-3">Ajouter un docuement</h2>
             <hr />
         </div>
-        <input type="hidden" asp-for="@Model.Document.DateCreation" value="@DateTime.Now" />
+        <input type="hidden" asp-for="Document.DateCreation" value="@DateTime.Now" />
+        <input type="hidden" asp-for="Document.Tribunal.Id" value="@Model.User1.Tribunal.Id" />
+        <input type="hidden" asp-for="Document.Tribunal.Name" value="@Model.User1.Tribunal.Name" />
+
+        <input type="hidden" asp-for="Document.Chambre.Id" value="@Model.User1.Chambre.Id" />
+        <input type="hidden" asp-for="Document.Chambre.Name" value="@Model.User1.Chambre.Name" />
+
         <div class="row">
-
+            <div class="mb-2 col-6">
+                Identifiant personne
+                <input asp-for="Document.IdPersonne" class="form-control" />
+                <span asp-validation-for="Document.IdPersonne" class="text-danger"></span>
+            </div>
 
             <div class="mb-2 col-6">
-                Nom
-                <input asp-for="@Model.Document.NomPersonne" class="form-control" />
-                <span asp-validation-for="Document.NomPersonne" class="text-danger"></span>
+                Type du document
 
-            </div>
-            <div class="mb-2 col-6">
-                Prenom
-                <input asp-for="@Model.Document.PrenomPersonne" class="form-control" />
-                <span asp-validation-for="Document.PrenomPersonne" class="text-danger"></span>
+                <select asp-for="@Model.Document.TypeDocuement.Id"
+                        asp-items="@Model.Types"
+                        class="form-control">
+                    <option value="null" class="font-italic ">--Choisir le type--</option>
+                </select>
+                <input type="hidden" asp-for="Document.TypeDocuement.Nom" value="@Model.Types.Where(t=>t.Value == Model.Document.TypeDocuement.Id.ToString())"/>
 
+                <span asp-validation-for="Document.TypeDocuement" class="text-danger"></span>
             </div>
+
         </div>
 
         <div class="row">
-            <div class="mb-2 mt-3 mb-4 col-6">
-                Genre :
-                <input asp-for="@Model.Document.Genre" type="radio" name="Gender" value="Male"> Male
-                <input asp-for="@Model.Document.Genre" type="radio" name="Gender" value="Femelle"> Femelle
-                <span asp-validation-for="Document.Genre" class="text-danger"></span>
-
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="mb-2 col-6">
-                Date de Naissance
-                <input asp-for="@Model.Document.DateNaissance" type="date" class="form-control" />
-                <span asp-validation-for="Document.DateNaissance" class="text-danger"></span>
-            </div>
-            <div class="mb-2 col-6">
-                Lieu de Naissance:
-                <input asp-for="@Model.Document.LieuNaissance" class="form-control" />
-                <span asp-validation-for="Document.LieuNaissance" class="text-danger"></span>
-
-            </div>
-        </div>
-        <div class="row">
-            <div class="mb-2 col-6">
+            @*<div class="mb-2 col-6">
                 Lieu de Creation
-                <input asp-for="@Model.Document.LieuCreation" class="form-control" />
-                <span asp-validation-for="Document.LieuCreation" class="text-danger"></span>
+                <input asp-for="@Model.Document.Tribunal" class="form-control" />
+                <span asp-validation-for="Document.Tribunal" class="text-danger"></span>
             </div>
             <div class="mb-2 col-6">
                 Type
                 <select asp-for="@Model.Document.Type"
-                        asp-items="@Model.Types"
-                        class="form-control">
-                    <option value="@null" class="font-italic ">--Choisir le type--</option>
-                </select>
-                <span asp-validation-for="Document.Type" class="text-danger"></span>
+                            asp-items="@Model.Types"
+                            class="form-control">
+                        <option value="@null" class="font-italic ">--Choisir le type--</option>
+                    </select>
+                    <span asp-validation-for="Document.Type" class="text-danger"></span>
+            </div>*@
+            <div class="pl-3 pt-3">
+                <button type="submit" class="btn btn-primary" style="width:150px">Ajouter</button>
+            </div>
         </div>
-         <div class="pl-3 pt-3">
-            <button type="submit" class="btn btn-primary" style="width:150px">Ajouter</button>
-         </div>
+
+
     </div>
 </form>
 
-@section Scripts{ 
-    @{ 
-        <partial name="_ValidationScriptsPartial"/>
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
     }
 }

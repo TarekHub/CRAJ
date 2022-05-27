@@ -1,6 +1,8 @@
 ﻿@page
 @model CRAJ.Web.Pages.Account.DocumentsModel
-
+@using Microsoft.AspNetCore.Identity
+@using CRAJ.Web.Data
+@inject UserManager<ApplicationUser> UserManager
 @{
     ViewBag.Title = "Documents";
     Layout = "~/Pages/Shared/_Account.cshtml";
@@ -21,43 +23,41 @@
     <table class="table table-bordered table-striped" style="width:100%">
         <thead>
             <tr>
-                <th>Identifiant</th>
-                <th>Nom</th>
-                <th>Prenom</th>
-                <th>Genre</th>
-                <th>Date de Naissance</th>
-                <th>Lieu de Naissance</th>
-                <th>Date de Création</th>
-                <th>Lieu de Création</th>
-                <th>Type</th>
-                <th>Opération</th>
+                <th>Identifiant / رقم</th>
+                <th>Identifiant personne / رقم الشخص</th>
+                <th>Date / تاريخ</th>
+                <th>Tribunal / المحكمة</th>
+                <th>Chambre / الغرفة</th>
+                <th>Type / نوع الوثيقة</th>
+                <th>Document/تحميل الوثيقة</th>
+                <th>Supprimer / حذف</th>
             </tr>
         </thead>
         <tbody>
-            @foreach(var obj in Model.Documents)
+            @foreach (var obj in Model.Documents)
             {
-                <tr>
-                    <td>@obj.Id</td>
-                    <td>@obj.NomPersonne</td>
-                    <td>@obj.PrenomPersonne</td>
-                    <td>@obj.Genre</td>
-                    <td>@obj.DateNaissance.ToString("d")</td>
-                    <td>@obj.LieuCreation</td>
-                    <td>@obj.DateCreation.ToString("d")</td>
-                    <td>@obj.LieuCreation</td>
-                    <td>@obj.Type</td>
-                    <td>
-                        <div class="w-75 btn-group" role="group">
+            <tr>
+                <td>@obj.Id</td>
+                <td>@obj.IdPersonne</td>
+                <td>@obj.DateCreation.ToString("d")</td>
+                <td>@obj.Tribunal.Name</td>
+                <td>@obj.Chambre.Name</td>
+                <td>@obj.TypeDocuement.Nom</td>
 
-                        <a asp-page="Imprimer" asp-route-id="@obj.Id" class="btn btn-primary mx-2">
-                            <i class="fa-solid fa-print"></i>
-                        </a>
-                        <a asp-page="Delete" class="btn btn-danger mx-2">
+                <td style="vertical-align:middle;text-align:center" >
+                    <a class="btn btn-primary"
+                       download href="@Url.Page("Documents", "DownloadFileFromDatabase",
+                                         new { fileName = "Document_"+obj.TypeDocuement.Nom+ "_" +obj.Id.ToString()})">
+                        <i class="fa-solid fa-print"></i>
+
+                    </a>
+                </td>
+                <td style="vertical-align:middle;text-align:center">
+                        <a asp-page="Delete" class="btn btn-danger">
                             <i class="fa-solid fa-trash-can"></i>
                         </a>
-                        </div>
-                    </td>
-                </tr>
+                </td>
+            </tr>
             }
         </tbody>
     </table>

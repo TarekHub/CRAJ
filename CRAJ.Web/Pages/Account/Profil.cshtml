@@ -4,12 +4,51 @@
     ViewBag.Title = "Profile";
     Layout = "~/Pages/Shared/_Account.cshtml";
 }
-<div classe="container mt-5">
+
+<div class="border p-3 mt-4">
+    <div class="row pb-2">
+        <h2 class="text-primary pl-3">Profile</h2>
+        <hr />
+    </div>
 
     <div class="row">
-        <div class="col-sm-12 col-md-12 col-lg-4">
-            <label class="ml-2">Username / اسم المستخدم : </label>
-            <span class="font-weight-bold"> @User.Identity.Name</span>
+        <div class="mb-2 col-6">
+            <label>Username / اسم المستخدم </label>
+            <label class="form-control font-weight-bold">@User.Identity.Name</label>
+        </div>
+        <div class="mb-2 col-6">
+            <label>Role / الدور : </label>
+            <label class="form-control font-weight-bold">
+                @User.Claims.FirstOrDefault(x => x.Type.Equals("http://schemas.microsoft.com/ws/2008/06/identity/claims/role", StringComparison.OrdinalIgnoreCase))?.Value
+            </label>
         </div>
     </div>
+
+
+    <div class="row">
+        @if (@User.Claims.FirstOrDefault(x => x.Type.Equals("http://schemas.microsoft.com/ws/2008/06/identity/claims/role",
+  StringComparison.OrdinalIgnoreCase))?.Value == "Archiviste Tribunal - الأرشيفي على مستوى المحكمة" ||
+  @User.Claims.FirstOrDefault(x => x.Type.Equals("http://schemas.microsoft.com/ws/2008/06/identity/claims/role",
+  StringComparison.OrdinalIgnoreCase))?.Value == "Procureur de la République - وكيل الجمهورية")
+        {
+            <div class="mb-2 col-6">
+                <label>Tribunal / محكمة</label>
+                <label class="form-control font-weight-bold">@Model.User1.Tribunal.Name</label>
+            </div>
+        }
+        @if (@User.Claims.FirstOrDefault(x => x.Type.Equals("http://schemas.microsoft.com/ws/2008/06/identity/claims/role",
+         StringComparison.OrdinalIgnoreCase))?.Value == "Archiviste Tribunal - الأرشيفي على مستوى المحكمة" ||
+         @User.Claims.FirstOrDefault(x => x.Type.Equals("http://schemas.microsoft.com/ws/2008/06/identity/claims/role",
+         StringComparison.OrdinalIgnoreCase))?.Value == "Archiviste Régionale - الأرشيفي على مستوى المجلس")
+        {
+            <div class="mb-2 col-6">
+                <label>Chambre / الغرفة</label>
+                <label class="form-control font-weight-bold">@Model.User1.Chambre.Name</label>
+            </div>
+        }
+
+    </div>
 </div>
+
+
+

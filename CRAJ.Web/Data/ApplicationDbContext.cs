@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CRAJ.Web.Data
 {
-    public class ApplicationDbContext : IdentityDbContext
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
@@ -17,5 +17,7 @@ namespace CRAJ.Web.Data
         }
         public DbSet<Document> Document { get; set; }
         public DbSet<TypeDoc> TypeDoc { get; set; }
+        public DbSet<Chambre> Chambre { get; set; }
+        public DbSet<Tribunal> Tribunal { get; set; }
     }
 }

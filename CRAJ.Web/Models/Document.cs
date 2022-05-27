@@ -22,8 +22,18 @@ namespace CRAJ.Web.Models
         public DateTime DateCreation { get; set; }
 
         [Required]
-        [Display(Name = "Lieu")]
-        public string LieuCreation { get; set; }
+        public Tribunal Tribunal { get; set; }
+
+
+        [Required]
+        public Chambre Chambre { get; set; }
+
+        [Required]
+        [Display(Name = "Type de Docuement")]
+        public TypeDoc TypeDocuement { get; set; }
+
+        [Column(TypeName = "varchar(max)")]
+        public byte[] DocumentImage { get; set; }
 
 
     }

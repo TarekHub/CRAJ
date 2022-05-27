@@ -36,7 +36,7 @@ namespace CRAJ.Web
                 Configuration.GetConnectionString("DefaultConnection")
                 ));
 
-            services.AddIdentity<IdentityUser, IdentityRole>()
+            services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.Configure<IdentityOptions>(options =>
@@ -120,7 +120,7 @@ namespace CRAJ.Web
         {
             //initializing custom roles 
             var RoleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
-            var UserManager = serviceProvider.GetRequiredService<UserManager<IdentityUser>>();
+            var UserManager = serviceProvider.GetRequiredService<UserManager<ApplicationUser>>();
             string[] roleNames = { "Ministre de la Justice - وزير العدل",
                 "Procureur général - النائب العام" , "Archiviste Régionale - الأرشيفي على مستوى المجلس",
                 "Procureur de la République - وكيل الجمهورية" , "Archiviste Tribunal - الأرشيفي على مستوى المحكمة",
@@ -140,7 +140,7 @@ namespace CRAJ.Web
             }
 
             //Here you could create a super user who will maintain the web app
-            var poweruser = new IdentityUser
+            var poweruser = new ApplicationUser
             {
 
                 UserName = "Admin",
