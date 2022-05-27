@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CRAJ.Web.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220525210932_1")]
-    partial class _1
+    [Migration("20220527145057_first")]
+    partial class first
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -158,6 +158,9 @@ namespace CRAJ.Web.Migrations
                     b.Property<int?>("TribunalId")
                         .HasColumnType("int");
 
+                    b.Property<int>("TypeArchive")
+                        .HasColumnType("int");
+
                     b.Property<int?>("TypeDocuementId")
                         .HasColumnType("int");
 
@@ -170,6 +173,43 @@ namespace CRAJ.Web.Migrations
                     b.HasIndex("TypeDocuementId");
 
                     b.ToTable("Document");
+                });
+
+            modelBuilder.Entity("CRAJ.Web.Models.DocumentArchiveRegional", b =>
+                {
+                    b.Property<int>("Id")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("ChambreId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("DateCreation")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("DocumentImage")
+                        .HasColumnType("varchar(max)");
+
+                    b.Property<int>("IdPersonne")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("TribunalId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TypeArchive")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("TypeDocuementId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ChambreId");
+
+                    b.HasIndex("TribunalId");
+
+                    b.HasIndex("TypeDocuementId");
+
+                    b.ToTable("DocumentArchiveRegional");
                 });
 
             modelBuilder.Entity("CRAJ.Web.Models.Tribunal", b =>
@@ -362,6 +402,27 @@ namespace CRAJ.Web.Migrations
                 });
 
             modelBuilder.Entity("CRAJ.Web.Models.Document", b =>
+                {
+                    b.HasOne("CRAJ.Web.Models.Chambre", "Chambre")
+                        .WithMany()
+                        .HasForeignKey("ChambreId");
+
+                    b.HasOne("CRAJ.Web.Models.Tribunal", "Tribunal")
+                        .WithMany()
+                        .HasForeignKey("TribunalId");
+
+                    b.HasOne("CRAJ.Web.Models.TypeDoc", "TypeDocuement")
+                        .WithMany()
+                        .HasForeignKey("TypeDocuementId");
+
+                    b.Navigation("Chambre");
+
+                    b.Navigation("Tribunal");
+
+                    b.Navigation("TypeDocuement");
+                });
+
+            modelBuilder.Entity("CRAJ.Web.Models.DocumentArchiveRegional", b =>
                 {
                     b.HasOne("CRAJ.Web.Models.Chambre", "Chambre")
                         .WithMany()

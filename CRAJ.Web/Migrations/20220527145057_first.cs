@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace CRAJ.Web.Migrations
 {
-    public partial class _1 : Migration
+    public partial class first : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -159,6 +159,7 @@ namespace CRAJ.Web.Migrations
                     TribunalId = table.Column<int>(type: "int", nullable: true),
                     ChambreId = table.Column<int>(type: "int", nullable: true),
                     TypeDocuementId = table.Column<int>(type: "int", nullable: true),
+                    TypeArchive = table.Column<int>(type: "int", nullable: false),
                     DocumentImage = table.Column<string>(type: "varchar(max)", nullable: true)
                 },
                 constraints: table =>
@@ -178,6 +179,42 @@ namespace CRAJ.Web.Migrations
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Document_TypeDoc_TypeDocuementId",
+                        column: x => x.TypeDocuementId,
+                        principalTable: "TypeDoc",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "DocumentArchiveRegional",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false),
+                    IdPersonne = table.Column<int>(type: "int", nullable: false),
+                    DateCreation = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    TribunalId = table.Column<int>(type: "int", nullable: true),
+                    ChambreId = table.Column<int>(type: "int", nullable: true),
+                    TypeDocuementId = table.Column<int>(type: "int", nullable: true),
+                    TypeArchive = table.Column<int>(type: "int", nullable: false),
+                    DocumentImage = table.Column<string>(type: "varchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_DocumentArchiveRegional", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_DocumentArchiveRegional_Chambre_ChambreId",
+                        column: x => x.ChambreId,
+                        principalTable: "Chambre",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_DocumentArchiveRegional_Tribunal_TribunalId",
+                        column: x => x.TribunalId,
+                        principalTable: "Tribunal",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_DocumentArchiveRegional_TypeDoc_TypeDocuementId",
                         column: x => x.TypeDocuementId,
                         principalTable: "TypeDoc",
                         principalColumn: "Id",
@@ -339,6 +376,21 @@ namespace CRAJ.Web.Migrations
                 column: "TypeDocuementId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_DocumentArchiveRegional_ChambreId",
+                table: "DocumentArchiveRegional",
+                column: "ChambreId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_DocumentArchiveRegional_TribunalId",
+                table: "DocumentArchiveRegional",
+                column: "TribunalId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_DocumentArchiveRegional_TypeDocuementId",
+                table: "DocumentArchiveRegional",
+                column: "TypeDocuementId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Tribunal_ConseilJudiciaireId",
                 table: "Tribunal",
                 column: "ConseilJudiciaireId");
@@ -363,6 +415,9 @@ namespace CRAJ.Web.Migrations
 
             migrationBuilder.DropTable(
                 name: "Document");
+
+            migrationBuilder.DropTable(
+                name: "DocumentArchiveRegional");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

@@ -21,19 +21,23 @@ namespace CRAJ.Web.Models
         [Display(Name = "Date")]
         public DateTime DateCreation { get; set; }
 
-        [Required]
         public Tribunal Tribunal { get; set; }
 
 
-        [Required]
         public Chambre Chambre { get; set; }
 
-        [Required]
         [Display(Name = "Type de Docuement")]
         public TypeDoc TypeDocuement { get; set; }
 
+        public int TypeArchive { get; set; }
+
         [Column(TypeName = "varchar(max)")]
         public byte[] DocumentImage { get; set; }
+
+        public bool isInTribunal { get; set; }
+        public bool isInConseilJ { get; set; }
+        public bool isInArchived { get; set; }
+        public bool isInProgress { get; set; }
 
 
     }

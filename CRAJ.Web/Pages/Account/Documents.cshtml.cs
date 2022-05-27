@@ -64,13 +64,14 @@ namespace CRAJ.Web.Pages.Account
             }
             if (User.IsInRole("Procureur général - النائب العام") || User.IsInRole("Archiviste Régionale - الأرشيفي على مستوى المجلس"))
             {
-                Documents = await _context.Document.Where(d=>d.Tribunal.ConseilJudiciaire.Name == User1.ConseilJudiciaire.Name)
+                Documents = await _context.Document.Where(d=>d.Tribunal.ConseilJudiciaire.Name == User1.ConseilJudiciaire.Name && 
+                d.isInConseilJ == true)
                 .Include(d => d.Tribunal).ThenInclude(t => t.ConseilJudiciaire)
                 .Include(d => d.Chambre).Include(d => d.TypeDocuement).ToListAsync();
             }
             if (User.IsInRole("Procureur de la République - وكيل الجمهورية") || User.IsInRole("Archiviste Tribunal - الأرشيفي على مستوى المحكمة"))
             {
-                Documents = await _context.Document.Where(d => d.Tribunal.Name == User1.Tribunal.Name)
+                Documents = await _context.Document.Where(d => d.Tribunal.Name == User1.Tribunal.Name && d.isInTribunal==true)
                 .Include(d => d.Tribunal).ThenInclude(t => t.ConseilJudiciaire)
                 .Include(d => d.Chambre).Include(d => d.TypeDocuement).ToListAsync();
             }
