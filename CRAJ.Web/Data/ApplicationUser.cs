@@ -12,6 +12,5 @@ namespace CRAJ.Web.Data
         public int IdUser { get; set; }
         public ConseilJudiciaire ConseilJudiciaire { get; set; }
         public Tribunal Tribunal{ get; set; }
-        public Chambre Chambre{ get; set; }
     }
 }

@@ -1,0 +1,15 @@
+﻿@page
+@model CRAJ.Web.Pages.Account.MagasinModel
+@{
+    ViewBag.Title = "Magasins";
+    Layout = "~/Pages/Shared/_Account.cshtml";
+}
+
+<div class="container m-3">
+    <label class="font-weight-bold">Choisissez un magasin / إختر مخزن : </label> <br />
+    @foreach (var magasin in Model.Magasins)
+    {
+        <a asp-page="ArchDocuments" asp-route-conseilId="@magasin.ConseilJudiciaire.Id" class="btn btn-primary">@magasin.NomMagasin</a>
+    }
+
+</div>

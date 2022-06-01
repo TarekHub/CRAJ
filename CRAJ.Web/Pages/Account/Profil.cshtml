@@ -36,17 +36,6 @@
                 <label class="form-control font-weight-bold">@Model.User1.Tribunal.Name</label>
             </div>
         }
-        @if (@User.Claims.FirstOrDefault(x => x.Type.Equals("http://schemas.microsoft.com/ws/2008/06/identity/claims/role",
-         StringComparison.OrdinalIgnoreCase))?.Value == "Archiviste Tribunal - الأرشيفي على مستوى المحكمة" ||
-         @User.Claims.FirstOrDefault(x => x.Type.Equals("http://schemas.microsoft.com/ws/2008/06/identity/claims/role",
-         StringComparison.OrdinalIgnoreCase))?.Value == "Archiviste Régionale - الأرشيفي على مستوى المجلس")
-        {
-            <div class="mb-2 col-6">
-                <label>Chambre / الغرفة</label>
-                <label class="form-control font-weight-bold">@Model.User1.Chambre.Name</label>
-            </div>
-        }
-
     </div>
 </div>
 

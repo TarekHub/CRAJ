@@ -80,14 +80,17 @@ namespace CRAJ.Web.Pages.Account
                             IdPersonne = AddDocumentViewModel.IdPersonne,
                             DateCreation = DateTime.Now,
                             Tribunal = user.Tribunal,
-                            Chambre = user.Chambre,
+                            Chambre = await _context.Chambre.FindAsync(AddDocumentViewModel.Chambre),
                             TypeDocuement = await _context.TypeDoc.FindAsync(AddDocumentViewModel.IdTypeDoc),
                             TypeArchive = AddDocumentViewModel.TypeArchive,
                             isInTribunal = true,
-                            DocumentImage= memoryStream.ToArray()
+                            Code= AddDocumentViewModel.Code,
+                            DocumentImage = memoryStream.ToArray()
                         });
 
                         await _context.SaveChangesAsync();
+
+                        TempData["success"]="Document ajouté avec succés";
 
                         return RedirectToPage("Documents");
                     }
@@ -104,7 +107,6 @@ namespace CRAJ.Web.Pages.Account
             // Referencing his custom properties
             await _context.Entry(User1).Reference(u => u.ConseilJudiciaire).LoadAsync();
             await _context.Entry(User1).Reference(u => u.Tribunal).LoadAsync();
-            await _context.Entry(User1).Reference(u => u.Chambre).LoadAsync();
 
             return User1;
         }

@@ -4,14 +4,16 @@ using CRAJ.Web.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CRAJ.Web.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220528221026_magasin")]
+    partial class magasin
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -25,6 +27,9 @@ namespace CRAJ.Web.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("AccessFailedCount")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("ChambreId")
                         .HasColumnType("int");
 
                     b.Property<string>("ConcurrencyStamp")
@@ -82,6 +87,8 @@ namespace CRAJ.Web.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("ChambreId");
+
                     b.HasIndex("ConseilJudiciaireId");
 
                     b.HasIndex("NormalizedEmail")
@@ -138,9 +145,6 @@ namespace CRAJ.Web.Migrations
 
                     b.Property<int?>("ChambreId")
                         .HasColumnType("int");
-
-                    b.Property<string>("Code")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("DateCreation")
                         .HasColumnType("datetime2");
@@ -373,6 +377,10 @@ namespace CRAJ.Web.Migrations
 
             modelBuilder.Entity("CRAJ.Web.Data.ApplicationUser", b =>
                 {
+                    b.HasOne("CRAJ.Web.Models.Chambre", "Chambre")
+                        .WithMany()
+                        .HasForeignKey("ChambreId");
+
                     b.HasOne("CRAJ.Web.Models.ConseilJudiciaire", "ConseilJudiciaire")
                         .WithMany()
                         .HasForeignKey("ConseilJudiciaireId");
@@ -380,6 +388,8 @@ namespace CRAJ.Web.Migrations
                     b.HasOne("CRAJ.Web.Models.Tribunal", "Tribunal")
                         .WithMany()
                         .HasForeignKey("TribunalId");
+
+                    b.Navigation("Chambre");
 
                     b.Navigation("ConseilJudiciaire");
 

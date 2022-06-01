@@ -14,6 +14,13 @@
         </div>
 
         <div class="row">
+
+            <div class="mb-2 col-6">
+                Code du docuement / رمز الوثيقة
+                <input asp-for="AddDocumentViewModel.Code" class="form-control" />
+                <span asp-validation-for="AddDocumentViewModel.Code" class="text-danger"></span>
+            </div>
+
             <div class="mb-2 col-6">
                 Identifiant personne
                 <input asp-for="AddDocumentViewModel.IdPersonne" class="form-control" />
@@ -42,7 +49,8 @@
                     <label> المحكمة => المجلس القضائي&nbsp; <input class="boost_radio" onclick="boostNo(1)" asp-for="AddDocumentViewModel.TypeArchive" type="radio" value=1 checked="checked" /></label><br />
                     <label> المحكمة => مركز الأرشيف&nbsp; <input class="boost_radio" onclick="boostNo(4)" asp-for="AddDocumentViewModel.TypeArchive" type="radio" value=2 /></label><br />
                     <label> المحكمة => المجلس القضائي => إتلاف &nbsp; <input class="boost_radio" onclick="boostNo(3)" asp-for="AddDocumentViewModel.TypeArchive" type="radio" value=3 /></label><br />
-                    <label> المحكمة => المجلس القضائي => مركز الأرشيف => إتلاف&nbsp; <input class="boost_radio" onclick="boostNo(2)" asp-for="AddDocumentViewModel.TypeArchive" type="radio" value=4 /></label>
+                    <label> المحكمة => المجلس القضائي => مركز الأرشيف => إتلاف&nbsp; <input class="boost_radio" onclick="boostNo(2)" asp-for="AddDocumentViewModel.TypeArchive" type="radio" value=4 /></label><br />
+                    <label> المحكمة => إتلاف&nbsp; <input class="boost_radio" onclick="boostNo(2)" asp-for="AddDocumentViewModel.TypeArchive" type="radio" value=5 /></label>
                 </div>
 
             </div>

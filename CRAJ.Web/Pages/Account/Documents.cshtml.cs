@@ -49,12 +49,14 @@ namespace CRAJ.Web.Pages.Account
 
         public async Task OnGetAsync()
         {
+            Documents = new List<Document>();
+
+
             User1 = await _userManager.GetCurrentUser(HttpContext);
 
             // Referencing his custom properties
             await _context.Entry(User1).Reference(u=>u.ConseilJudiciaire).LoadAsync();
             await _context.Entry(User1).Reference(u => u.Tribunal).LoadAsync();
-            await _context.Entry(User1).Reference(u => u.Chambre).LoadAsync();
 
             if (User.IsInRole("Ministre de la Justice - وزير العدل"))
             {
@@ -75,14 +77,6 @@ namespace CRAJ.Web.Pages.Account
                 .Include(d => d.Tribunal).ThenInclude(t => t.ConseilJudiciaire)
                 .Include(d => d.Chambre).Include(d => d.TypeDocuement).ToListAsync();
             }
-            if (User.IsInRole("Directeur du Centre - مدير المركز") || User.IsInRole("Archiviste du Centre - الأرشيفي على مستوى مركز الأرشيف"))
-            {
-                Documents = new List<Document>();
-            }
-            if (User.IsInRole("Avocat - محامي"))
-            {
-                Documents = new List<Document>();
-            }
             if (User.IsInRole("Titulaires de Droits - أصحاب الحقوق"))
             {
                 Documents = await _context.Document.Where(d => d.IdPersonne.ToString() == User1.IdUser.ToString())
@@ -91,5 +85,6 @@ namespace CRAJ.Web.Pages.Account
             }
 
         }
+
     }
 }

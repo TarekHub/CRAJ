@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
@@ -33,11 +33,23 @@ namespace CRAJ.Web.Pages
             {
                 var identityResult = await _signInManager.PasswordSignInAsync(Model.Username, Model.Password, Model.RememberMe, false);
 
-
                 if (identityResult.Succeeded)
                 {
+                    var user = await _userManager.FindByEmailAsync(Model.Username);
+                    var role = await _userManager.GetRolesAsync(user);
+
                     if (returnUrl is null || returnUrl == "/")
                     {
+                        if (role.First()=="Archiviste du Centre - الأرشيفي على مستوى مركز الأرشيف" ||
+                            role.First() == "Directeur du Centre - مدير المركز")
+                        {
+                            return RedirectToPage("Account/Magasin");
+                        }
+                        if (role.First() == "Avocat - محامي")
+                        {
+                            return RedirectToPage("Avocat/Search");
+
+                        }
                         return RedirectToPage("Account/Documents");
                     }
                     else

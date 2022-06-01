@@ -12,6 +12,7 @@ namespace CRAJ.Web.Models
     {
         [Key]
         public int Id { get; set; }
+        public string Code { get; set; }
 
         [Required]
         [Display(Name = "Identifiant de la personne")]

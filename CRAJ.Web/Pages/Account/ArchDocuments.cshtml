@@ -1,32 +1,14 @@
 ﻿@page
-@model CRAJ.Web.Pages.Account.DocumentsModel
-@using Microsoft.AspNetCore.Identity
-@using CRAJ.Web.Data
-@inject UserManager<ApplicationUser> UserManager
+@model CRAJ.Web.Pages.Account.ArchDocumentsModel
 @{
-    ViewBag.Title = "Documents";
+    ViewBag.Title = "Document dans le Magasin";
     Layout = "~/Pages/Shared/_Account.cshtml";
 }
-
-
-@*@if (TempData["success"] != null)
-{
-    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-    <script type="text/javascript">
-        toastr.success('@TempData["success"]');
-    </script>
-}*@
-
 
 <div class="container p-3">
     <div class="row pt-4">
         <div class="col-6">
-            <h2 class="text-primary">Document List</h2>
-        </div>
-        <div class="col-6" style="text-align:end">
-            <a asp-page="Create" class="btn btn-primary">
-                <i class="fa-solid fa-plus"></i> &nbsp;Ajouter un document
-            </a>
+            <h2 class="text-primary">Document List / قائمة الوثائق</h2>
         </div>
     </div>
     <br /><br />
@@ -55,7 +37,7 @@
 
                     <td style="vertical-align:middle;text-align:center">
                         <a class="btn btn-primary"
-                           download href="@Url.Page("Documents", "DownloadFileFromDatabase",
+                           download href="@Url.Page("ArchDocuments", "DownloadFileFromDatabase",
                                          new { fileName = "Document_"+obj.TypeDocuement.Nom+ "_" +obj.Id.ToString()})">
                             <i class="fa-solid fa-print"></i>
 

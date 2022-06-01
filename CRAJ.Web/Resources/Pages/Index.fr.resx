@@ -118,13 +118,19 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Adresse" xml:space="preserve">
-    <value>Ali Mendjeli, prés de la poste centrale</value>
+    <value>Rue N° : 01 Ali Manjali - Al-Kharroub - Constantine</value>
   </data>
   <data name="APropos" xml:space="preserve">
     <value>À Propos</value>
   </data>
   <data name="AProposTexte" xml:space="preserve">
-    <value>L'archive est l'organisme qui se charge de conserver de manière organisée les documents, enregistrements, inscriptions et codes, qu'ils émanent d'un établissement public ou parapublic, qu'il s'agisse d'un service d'entreprise ou d'un organisme privé, ainsi que les départements gouvernementaux, les intérêts et les entreprises qui mènent des activités liées à ses affaires et il entreprend la tâche de le préserver et d'en prendre soin, et il est géré par ceux qui en assument tour à tour la responsabilité ou par toute partie autorisée à le conserver, grâce à l'expansion de l'original concept d'archives destiné à conserver ces matériaux, ainsi qu'à préserver ce qui est lié à l'histoire généalogique des familles et des personnalités éminentes qui, en les préservant, apportent un bénéfice à les conserver.Fournir des sources primaires, des preuves et des preuves sur l'histoire de le pays et les origines de son peuple.</value>
+    <value>Le Centre Régional des Archives Judiciaires de la wilaya de Constantine est situé dans la circonscription administrative n° 1 à Ali Mendjeli dans le département d'El Khroub. Il bénéfice d'une indépendance financière et morale. Il a été inauguré par le Ministre de la Justice, Garde des Sceaux, M. Belkacem Zeghmati le jeudi 4 février 2021 sur la base du décret exécutif n° 12/409 du 24 Muharram 1443 correspondant au 08 décembre 2012, qui porte la constitution de centres régionaux des archives judiciaires et détermine leur organisation intérieur, et sur la base de la décision ministérielle fondée le 16 rajab 1441 correspondant au : 11 mars 2020 qui détermine aussi l'organisation interne des centres régionaux des archives judiciaires.
+
+Le centre est dirigé par la représentante Mme Makass Fatiha le 26 juillet 2021 sous l'ordre du ministre de justice, titulaire d'un Master 2 en techniques archivistiques au titre de l'année 2018 et occuant plusieurs postes, notamment :
+
+Archiviste pour le service d'instruction du tribunal d'El Khroub pendant deux ans, puis Archiviste documentaire au Conseil Judiciaire de Constantine, puis Archiviste maître documentaire au même conseil.
+
+Le coût d'achèvement du Centre Régional des Archives s'est élevé à un milliard soixante et onze millions de dinars algériens comprenant 15 conseils dans ses différents tribunaux : (Conseil judiciaire de Constantine, Oum El Bouaghi, Skikda, Jijel, Batna, Guelma, Khenchela, El Tarf, Annaba Sétif, Tébessa, Souk Ahras, Mila, Bordj Bou Arreridj, Béjaïa.)</value>
   </data>
   <data name="CallUs" xml:space="preserve">
     <value>Numéro</value>
@@ -136,7 +142,7 @@
     <value>Centre Régional d'Archives de Constantine</value>
   </data>
   <data name="Email" xml:space="preserve">
-    <value>craj@gmail.com</value>
+    <value>craj.constantine@gmail.com</value>
   </data>
   <data name="EmailUs" xml:space="preserve">
     <value>Email</value>
@@ -153,11 +159,14 @@
   <data name="Intro" xml:space="preserve">
     <value>Le Centre régional des archives judiciaires de Constantine -CRAJ- est un organisme (unité administrative) qui a pour mandat de conserver, de traiter et de rendre accessible des archives historiques (docuement, carnets, fiches ...) appartenant au secteur judiciaire.</value>
   </data>
+  <data name="Login" xml:space="preserve">
+    <value>Login</value>
+  </data>
   <data name="MinistèreJustice" xml:space="preserve">
     <value>Ministère de la Justice</value>
   </data>
   <data name="Number" xml:space="preserve">
-    <value>06 99 99 99 99</value>
+    <value>031744608</value>
   </data>
   <data name="ObjectifArchive" xml:space="preserve">
     <value>Objectifs de l'archives judiciaires</value>
@@ -183,6 +192,9 @@
   <data name="ReadMore" xml:space="preserve">
     <value>Plus d'information</value>
   </data>
+  <data name="Register" xml:space="preserve">
+    <value>Inscription</value>
+  </data>
   <data name="Research" xml:space="preserve">
     <value>Rechercher</value>
   </data>
@@ -196,12 +208,18 @@
     <value>Avocat/Juge</value>
   </data>
   <data name="Role4Name" xml:space="preserve">
-    <value>Visiteur</value>
+    <value>Titulaire de droit</value>
+  </data>
+  <data name="Role5Name" xml:space="preserve">
+    <value>Archivistes</value>
+  </data>
+  <data name="Role6Name" xml:space="preserve">
+    <value>Ministre de la Justice</value>
   </data>
   <data name="Roles" xml:space="preserve">
     <value>Roles</value>
   </data>
-  <data name="RolesTexte" xml:space="preserve">
+  <data name="RoleTexte" xml:space="preserve">
     <value>Cette plateforme regroupe plusieurs rôles dans le secteur judiciaire.</value>
   </data>
   <data name="ServicePoint1" xml:space="preserve">

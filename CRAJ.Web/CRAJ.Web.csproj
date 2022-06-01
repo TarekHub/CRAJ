@@ -5,6 +5,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\assets\img\slide\slide-1.png" />
+    <Content Remove="wwwroot\assets\img\slide\slide-2.png" />
+    <Content Remove="wwwroot\assets\img\slide\slide-4.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\slide\slide-4.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="wwwroot\assets\img\slide\slide-1.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\slide\slide-2.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="wwwroot\AccountMenu.css" />
   </ItemGroup>
 

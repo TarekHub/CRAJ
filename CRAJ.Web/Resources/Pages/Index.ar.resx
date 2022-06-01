@@ -118,13 +118,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Adresse" xml:space="preserve">
-    <value>مدينة علي منجلي بجانب البريد المركزي</value>
+    <value>الوحدة الجوارية  رقم : 01 علي منجلي - الخروب - قسنطينة</value>
   </data>
   <data name="APropos" xml:space="preserve">
     <value>نبذة عن الأرشيف</value>
   </data>
   <data name="AProposTexte" xml:space="preserve">
-    <value>الأرشيف هي الهيئة التي تتولى مهمة حفظ الوثائق و السجلات و القيود و المدونات بصورة منظمة ، إن كانت صادرة عن مؤسسة عامة أو شبه عامة ، سواء أكانت دائرة أعمال أم هيئة خاصة ، و كذلك الدوائر و المصالح و الشركات الحكومية التي تقوم بتسيير الأعمال المتصلة بشؤونها و تضطلع بمهمة حفظها و العناية بها ، و يتداولها من يتناوبون على المسؤولية أو أية جهة مخولة بالاحتفاظ بها و ذلك من خلال اتساع المفهوم الأصلي للأرشيف المقصود به حفظ هذه المواد ، و كذلك حفظ ما يخص تاريخ أنساب العائلات و الشخصيات البارزة التي تقدم عند حفظها فائدة في توفير المصادر الأولية و الأدلة و الشواهد على تاريخ البلاد و أصول شعبها</value>
+    <value>يقع المركز الجهوي للارشيف القضائي لولاية قسنطينة بالمقاطعة الإدارية رقم 1 علي منجلي لدائرة الخروب، ويتمتع باستقلالية مالية ومعنوية وقد تم تدشينه من قبل وزير العدل حافظ الاختام السيد بلقاسم زغماتي يوم الخميس 04 فيفري 2021م وذلك بناء على المرسوم التنفيذي رقم 12/409 المؤرخ في 24 محرم عام 1443 الموافق ل 08 ديسمبر 2012 والمتضمن انشاء مراكز جهوية للارشيف القضائي وتحديد كيفية تنظيمها وسيرها، وبناء على القرار الوزاري المشترك المؤرخ في 16 رجب عام 1441 الموافق ل : 11 مارس 2020 والذي يحدد التنظيم الداخلي للمراكز الجهوية للأرشيف القضائي.
+يترأس المركز ممثلة السيدة مكاس فتيحة، الذي تم تعيينها في 26 جويلية 2021 بموجب قرار من وزير العدل، وهي متحصلة على شهادة ماستر 2 في تخصص تقنيات أرشيفية لسنة 2018 وقد شغلت العديد من المناصب من بينها :
+أرشيفية لقسم تحقيق لمحكمة الخروب لمدة سنتين وبعدها وثائقية أمينة محفوظات بمجلس قضاء قسنطينة ثم وثائقية أمينة محفوظات رئيسية بنفس المجلس.
+بلغت تكلفة انجاز المركز الجهوي للأرشيف مليار وواحد وسبعون مليون دينار جزائري وهو يضم 15 مجلس بمحاكمه المختلف : (المجلس  القضائي لولاية قسنطينة، ام البواقي، سكيكدة،  جيجل،  باتنة، قالمة، خنشلة، الطارف، عنابة سطيف، تبسة، سوق أهراس، ميلة، برج بوعريريج، بجاية.)</value>
   </data>
   <data name="CallUs" xml:space="preserve">
     <value>اتصل بنا</value>
@@ -136,7 +139,7 @@
     <value>المركز الجهوي للأرشيف القضائي بقسنطينة</value>
   </data>
   <data name="Email" xml:space="preserve">
-    <value>craj@gmail.com</value>
+    <value>craj.constantine@gmail.com</value>
   </data>
   <data name="EmailUs" xml:space="preserve">
     <value>ارسل لنا عبر البريد الإلكتروني</value>
@@ -150,11 +153,14 @@
   <data name="Intro" xml:space="preserve">
     <value>المركز الجهوي للأرشيف القضائي بقسنطينة هو منظمة (وحدة إدارية) تتمثل مهمتها في حفظ ومعالجة وإتاحة المحفوظات التاريخية (الوثائق ، والمذكرات ، والملفات ، وما إلى ذلك) التابعة للقطاع القضائي</value>
   </data>
+  <data name="Login" xml:space="preserve">
+    <value>الدخول</value>
+  </data>
   <data name="MinistèreJustice" xml:space="preserve">
     <value>وزارة العدل</value>
   </data>
   <data name="Number" xml:space="preserve">
-    <value>06 99 99 99 99</value>
+    <value>031744608</value>
   </data>
   <data name="ObjectifArchive" xml:space="preserve">
     <value>مهام الأرشيف القضائي</value>
@@ -180,6 +186,9 @@
   <data name="ReadMore" xml:space="preserve">
     <value>المزيد</value>
   </data>
+  <data name="Register" xml:space="preserve">
+    <value>تسجيل</value>
+  </data>
   <data name="Research" xml:space="preserve">
     <value>البحث</value>
   </data>
@@ -193,7 +202,13 @@
     <value>محامي/قاضي</value>
   </data>
   <data name="Role4Name" xml:space="preserve">
-    <value>المستعمل</value>
+    <value>أصحاب الحقوق</value>
+  </data>
+  <data name="Role5Name" xml:space="preserve">
+    <value>الأرشيفي</value>
+  </data>
+  <data name="Role6Name" xml:space="preserve">
+    <value>وزير العدل</value>
   </data>
   <data name="Roles" xml:space="preserve">
     <value>الأدوار</value>
@@ -232,7 +247,7 @@
     <value>تتعدد خدمات المركز الجهوي للأرشيف القضائي بقسنطينة، والغرض الرئيسي من هذه البوابة هو ربط مختلف الفاعلين في القطاع القضائي في مكان واحد</value>
   </data>
   <data name="Welcome" xml:space="preserve">
-    <value>مرحبا بكم في موقع البوابة الإلكترونية لإدارة الملفات القضائية</value>
+    <value>مرحبا بكم في موقع البوابة الإلكترونية لإدارة و تسيير الملفات القضائية</value>
   </data>
   <data name="YourLastName" xml:space="preserve">
     <value>اللقب</value>

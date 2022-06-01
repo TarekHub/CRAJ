@@ -143,11 +143,11 @@ namespace CRAJ.Web
             var poweruser = new ApplicationUser
             {
 
-                UserName = "Admin",
-                Email = "admin@mail.com",
+                UserName = "MJ-User1",
+                Email = "MJ-User1",
             };
             //Ensure you have these values in your appsettings.json file
-            string userPWD = "123456p";
+            string userPWD = "123456";
             var _user = await UserManager.FindByEmailAsync("admin@mail.com");
 
             if (_user == null)

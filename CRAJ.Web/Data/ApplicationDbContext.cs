@@ -19,5 +19,6 @@ namespace CRAJ.Web.Data
         public DbSet<TypeDoc> TypeDoc { get; set; }
         public DbSet<Chambre> Chambre { get; set; }
         public DbSet<Tribunal> Tribunal { get; set; }
+        public DbSet<Magasin> Magasin{ get; set; }
     }
 }

@@ -1,0 +1,64 @@
+﻿@page
+@model CRAJ.Web.Pages.Avocat.SearchModel
+@{
+    ViewBag.Title = "Chercher - Avocat";
+    Layout = "~/Pages/Shared/_Account.cshtml";
+}
+
+<div class="content">
+
+    <form class="m-5" method="get">
+        <label class="form-label">Num° Document / رقم الوثيقة</label>
+        <div class="input-group">
+            <input class="form-control" asp-for="SearchTerm" />
+            <div class="input-group-append">
+                <button type="submit" class="btn btn-primary">البحث</button>
+            </div>
+        </div>
+
+    </form>
+
+    <div class="container p-3">
+        <div class="row pt-4">
+            <div class="col-6">
+                <h2 class="text-primary">Résultat de Recherche / نتيجة البحث</h2>
+            </div>
+        </div>
+        <br /><br />
+        <table class="table table-bordered table-striped" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Code / رقم</th>
+                    <th>Identifiant personne / رقم الشخص</th>
+                    <th>Date / تاريخ</th>
+                    <th>Tribunal / المحكمة</th>
+                    <th>Chambre / الغرفة</th>
+                    <th>Type / نوع الوثيقة</th>
+                    <th>Document/تحميل الوثيقة</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var obj in Model.Documents)
+                {
+                    <tr>
+                        <td>@obj.Code</td>
+                        <td>@obj.IdPersonne</td>
+                        <td>@obj.DateCreation.ToString("d")</td>
+                        <td>@obj.Tribunal.Name</td>
+                        <td>@obj.Chambre.Name</td>
+                        <td>@obj.TypeDocuement.Nom</td>
+
+                        <td style="vertical-align:middle;text-align:center">
+                            <a class="btn btn-primary"
+                               download href="@Url.Page("Search", "DownloadFileFromDatabase",
+                                         new { fileName = "Document_"+obj.TypeDocuement.Nom+ "_" +obj.Id.ToString()})">
+                                <i class="fa-solid fa-print"></i>
+
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

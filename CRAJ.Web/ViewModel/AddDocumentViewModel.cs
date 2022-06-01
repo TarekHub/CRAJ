@@ -12,9 +12,13 @@ namespace CRAJ.Web.ViewModel
         [Required]
         public int IdPersonne { get; set; }
         [Required]
+        public string Code { get; set; }
+        [Required]
         public int IdTypeDoc { get; set; }
         [Required]
         public int TypeArchive { get; set; }
+        [Required]
+        public int Chambre { get; set; }
         [Required]
         public IFormFile FormDocument { get; set; }
     }

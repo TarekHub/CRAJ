@@ -23,7 +23,20 @@
             <ul style="padding-left:0">
                 <li><a asp-page="/Index"><i class="fa-solid fa-house"></i>Home</a></li>
                 <li><a asp-page="Profil"><i class="fa-solid fa-user"></i>Profile</a></li>
-                <li><a asp-page="Documents"><i class="fa-solid fa-file"></i>Docuements</a></li>
+                @if (User.Identity.IsAuthenticated && User.IsInRole("Archiviste du Centre - الأرشيفي على مستوى مركز الأرشيف"))
+                {
+                    <li><a asp-page="Magasin"><i class="fa-solid fa-file"></i>Magasins</a></li>
+                }
+                @if (User.Identity.IsAuthenticated && User.IsInRole("Avocat - محامي"))
+                {
+                    <li><a asp-page="Search"><i class="fa-solid fa-file"></i>Rechercher</a></li>
+                }
+                else
+                {
+                    <li><a asp-page="Documents"><i class="fa-solid fa-file"></i>Documents</a></li>
+
+                }
+
                 <li><a asp-page="/Logout"><i class="fa-solid fa-arrow-right-from-bracket"></i>Logout</a></li>
             </ul>
         </div>

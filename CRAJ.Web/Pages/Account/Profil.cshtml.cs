@@ -30,7 +30,6 @@ namespace CRAJ.Web.Pages.Account
             // Referencing his custom properties
             await _context.Entry(User1).Reference(u => u.ConseilJudiciaire).LoadAsync();
             await _context.Entry(User1).Reference(u => u.Tribunal).LoadAsync();
-            await _context.Entry(User1).Reference(u => u.Chambre).LoadAsync();
         }
     }
 }

@@ -9,6 +9,12 @@
 @{
     ViewData["Title"] = "Home page";
 }
+<style>
+    .vl {
+        border-left: 3px solid white;
+        height: 30px;
+    }
+</style>
 
 <header id="header" class="fixed-top d-flex align-items-center ">
     <div class="container d-flex align-items-center justify-content-between ">
@@ -25,13 +31,13 @@
                 <li><a class="nav-link scrollto" href="#about">@localizer["APropos"]</a></li>
                 <li><a class="nav-link scrollto" href="#services">@localizer["Services"]</a></li>
                 <li><a class="nav-link scrollto" href="#team">@localizer["Roles"]</a></li>
-                <li><a class="nav-link scrollto" href="#contact">@localizer["Contact"]</a></li>
-                <li>
+                <li><a class="nav-link scrollto mr-4" href="#contact">@localizer["Contact"]</a> </li>
+                <span class="vl"></span>
+                <li><a asp-page="Login">@localizer["Login"]</a></li>
+                <li><a asp-page="Register">@localizer["Register"]</a></li>
+                <li class="nav-link scrollto">
                     <partial name="_Culture" />
                 </li>
-                <li><a asp-page="Login">@localizer["Login"]</a></li>
-
-                <li><a asp-page="Register">Inscription</a></li>
 
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
@@ -81,7 +87,7 @@
                     </div>
                 </div>
 
-                <div class="carousel-item" style="background-image: url(assets/img/slide/slide-3.png);">
+                <div class="carousel-item" style="background-image: url(assets/img/slide/slide-5.png);">
                     <div class="carousel-container">
                         <div class="carousel-content">
                             <h4 class="animate__animated animate__fadeInDown">
@@ -193,7 +199,18 @@
 
             <div class="row">
 
-                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                <div class="col-lg-2 col-md-6 d-flex align-items-stretch">
+                    <div class="member">
+                        <div class="member-img">
+                            <img src="assets/img/team/user.png" class="img-fluid" alt="">
+                        </div>
+                        <div class="member-info">
+                            <h4>@localizer["Role5Name"]</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-6 d-flex align-items-stretch">
                     <div class="member">
                         <div class="member-img">
                             <img src="assets/img/team/team-1.png" class="img-fluid" alt="">
@@ -204,7 +221,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                <div class="col-lg-2 col-md-6 d-flex align-items-stretch">
                     <div class="member">
                         <div class="member-img">
                             <img src="assets/img/team/team-2.png" class="img-fluid" alt="">
@@ -215,7 +232,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                <div class="col-lg-2 col-md-6 d-flex align-items-stretch">
                     <div class="member">
                         <div class="member-img">
                             <img src="assets/img/team/team-3.png" class="img-fluid" alt="">
@@ -226,13 +243,24 @@
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                <div class="col-lg-2 col-md-6 d-flex align-items-stretch">
                     <div class="member">
                         <div class="member-img">
                             <img src="assets/img/team/team-4.png" class="img-fluid" alt="">
                         </div>
                         <div class="member-info">
                             <h4>@localizer["Role4Name"]</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-6 d-flex align-items-stretch">
+                    <div class="member">
+                        <div class="member-img">
+                            <img src="assets/img/team/user-2.png" class="img-fluid" alt="">
+                        </div>
+                        <div class="member-info">
+                            <h4>@localizer["Role6Name"]</h4>
                         </div>
                     </div>
                 </div>
@@ -250,12 +278,10 @@
             </div>
 
             <div class="row">
-                <div class="col-lg-6">
-                    <div class="info-box mb-4">
-                        <i class="bx bx-map"></i>
-                        <h3>@localizer["OurAdresse"]</h3>
-                        <p>@localizer["Adresse"]</p>
-                    </div>
+
+                <div class="col-lg-6 ">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3853.7365213069356!2d6.581549217732825!3d36.256992345484875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12f17183712bbc39%3A0x2fe8a52c3eb339ec!2sCentre%20r%C3%A9gional%20des%20archives%20judiciaires%20de%20constantine!5e0!3m2!1sfr!2sbg!4v1653135348986!5m2!1sfr!2sbg"
+                            frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
                 </div>
 
                 <div class="col-lg-3 col-md-6">
@@ -274,57 +300,24 @@
                     </div>
                 </div>
 
+                <div class="col-lg-6 col-md-6">
+                    <div class="info-box mb-4">
+                        <i class="bx bx-map"></i>
+                        <h3>@localizer["OurAdresse"]</h3>
+                        <p>@localizer["Adresse"]</p>
+                    </div>
+                </div>
+
             </div>
 
             <div class="row">
 
-                <div class="col-lg-6 ">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3853.7365213069356!2d6.581549217732825!3d36.256992345484875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12f17183712bbc39%3A0x2fe8a52c3eb339ec!2sCentre%20r%C3%A9gional%20des%20archives%20judiciaires%20de%20constantine!5e0!3m2!1sfr!2sbg!4v1653135348986!5m2!1sfr!2sbg"
-                            frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
-                </div>
-
-                <div class="col-lg-6">
-                    <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-                        <div class="row">
-                            <div class="col-md-6 form-group">
-                                <input type="text" name="name" class="form-control" id="name" placeholder=@localizer["YourName"] required>
-                            </div>
-                            <div class="col-md-6 form-group mt-3 mt-md-0">
-                                <input type="email" class="form-control" name="email" id="email" placeholder=@localizer["YourLastName"] required>
-                            </div>
-                        </div>
-                        <div class="form-group mt-3">
-                            <input type="text" class="form-control" name="subject" id="subject" placeholder=@localizer["IdDocuement"] required>
-                        </div>
-                        <div class="my-3">
-                            <div class="loading">Loading</div>
-                            <div class="error-message"></div>
-                            <div class="sent-message">Your message has been sent. Thank you!</div>
-                        </div>
-                        <div class="text-center"><button type="submit">@localizer["Research"]</button></div>
-                    </form>
-                </div>
 
             </div>
 
         </div>
     </section>
 </main>
-<footer id="footer">
-    <div class="footer-top">
-        <div class="container">
-            <div class="copyright">
-                &copy; Copyright <strong><span>Alstar</span></strong>. All Rights Reserved
-            </div>
-            <div class="credits">
-                <!-- All the links in the footer should remain intact. -->
-                <!-- You can delete the links only if you purchased the pro version. -->
-                <!-- Licensing information: https://bootstrapmade.com/license/ -->
-                <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/alstar-free-parallax-bootstrap-template/ -->
-                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-            </div>
-        </div>
-    </div>
-</footer>
+
 
 
